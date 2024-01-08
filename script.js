@@ -24,6 +24,7 @@ const installDependencies = () => {
     "@tanstack/eslint-plugin-query",
     "@testing-library/jest-native",
     "@testing-library/react-native",
+    "@types/jest",
     "babel-plugin-module-resolver",
     "cz-conventional-changelog",
     "eslint-plugin-import",
