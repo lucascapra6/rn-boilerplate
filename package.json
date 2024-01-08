@@ -1,0 +1,29 @@
+{
+  "name": "@lucascapra6/react-native-boilerplate",
+  "version": "1.0.0",
+  "description": "React Native Boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lucascapra6/rn-boilerplate.git"
+  },
+  "author": "Lucas de Capra <lucasdecapra@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "native",
+    "boilerplate",
+    "react-native",
+    "starter-kit"
+  ],
+  "files": [
+    "template",
+    "template/.gitignore",
+    "template.config.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/lucascapra6/rn-boilerplate/issues"
+  },
+  "homepage": "https://github.com/lucascapra6/rn-boilerplate#readme",
+  "main": "script.js",
+  "scripts": {}
+}
