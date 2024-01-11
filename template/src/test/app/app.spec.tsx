@@ -1,5 +1,7 @@
 import { render } from 'test-utils';
-import {App} from "@app";
+import { App, ErrorPage } from '@app';
+import React from 'react';
+import { AppWithError } from '@test/mocks/app/AppWithError';
 
 describe('Default App Test', () => {
     jest.useFakeTimers();
@@ -12,5 +14,10 @@ describe('Default App Test', () => {
         expect(animatedElement.props.style.width.value).toBe(100);
         jest.runAllTimers();
         expect(animatedElement.props.style.width.value).toBe(150);
+    });
+    it('should render a error screen, by react-native-error-boundary, when a error is throwed somewhere in the app', function () {
+        const { getByText } = render(<AppWithError />);
+        const errorMessage = getByText(/There's an error/i);
+        expect(errorMessage).toBeDefined();
     });
 });
