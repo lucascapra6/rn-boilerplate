@@ -6,6 +6,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { theme } from '@theme';
 import { ReactNativeReanimated } from '@components/ReactNativeReanimated';
+import ErrorBoundary from 'react-native-error-boundary';
 
 const queryClient = new QueryClient();
 
@@ -14,9 +15,11 @@ export const App = () => {
         <QueryClientProvider client={queryClient}>
             <SafeAreaProvider>
                 <ThemeProvider theme={theme}>
-                    <SafeAreaView>
-                        <ReactNativeReanimated />
-                    </SafeAreaView>
+                    <ErrorBoundary>
+                        <SafeAreaView>
+                            <ReactNativeReanimated />
+                        </SafeAreaView>
+                    </ErrorBoundary>
                 </ThemeProvider>
             </SafeAreaProvider>
         </QueryClientProvider>
