@@ -1,12 +1,13 @@
 import React from 'react';
 
+import { ReactNativeReanimated } from '@components/ReactNativeReanimated';
+import { DefaultErrorScreen } from '@screens/Error';
 import { ThemeProvider } from '@shopify/restyle';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import { theme } from '@theme';
-import { ReactNativeReanimated } from '@components/ReactNativeReanimated';
-import ErrorBoundary from 'react-native-error-boundary';
 
 const queryClient = new QueryClient();
 
@@ -15,7 +16,7 @@ export const App = () => {
         <QueryClientProvider client={queryClient}>
             <SafeAreaProvider>
                 <ThemeProvider theme={theme}>
-                    <ErrorBoundary>
+                    <ErrorBoundary FallbackComponent={DefaultErrorScreen}>
                         <SafeAreaView>
                             <ReactNativeReanimated />
                         </SafeAreaView>

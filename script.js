@@ -22,7 +22,7 @@ const installDependencies = () => {
     "zod",
     "zustand",
     "react-native-reanimated",
-    "react-native-error-boundary"
+    "react-error-boundary"
   ];
 
   const devDependencies = [
